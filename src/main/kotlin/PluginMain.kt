@@ -4,6 +4,7 @@ import io.ktor.client.*
 import io.ktor.client.engine.okhttp.*
 import io.ktor.client.request.*
 import net.mamoe.mirai.console.data.ReadOnlyPluginConfig
+import net.mamoe.mirai.console.data.ValueDescription
 import net.mamoe.mirai.console.data.value
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescription
 import net.mamoe.mirai.console.plugin.jvm.KotlinPlugin
@@ -54,6 +55,7 @@ suspend fun getDataByGet(params: String): String {
 }
 
 object MySetting: ReadOnlyPluginConfig("chatbot-config"){
-    var ApiKey:String by value("0")
-    var ApiSecret by value("0")
+    @ValueDescription("请到http://www.itpk.cn/  申请api")
+    var ApiKey:String by value("")
+    var ApiSecret by value("")
 }
